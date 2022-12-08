@@ -31,5 +31,5 @@ for file in files:
     print(dftmp['timestamp'].iloc[0])
     df_lag = create_lagdata(dftmp)
     dfs.append(df_lag)
-df = pd.concat(dfs)                                                    
+df = pd.concat(dfs)                           
 df.to_sql(con=database_connection, name='traffic_with_lag_data', index=False, if_exists='replace')
