@@ -21,7 +21,7 @@ files = os.listdir('../dataset')
 dfs=[]
 for file in files:
     dftmp = pd.read_csv('../dataset'+'/'+file)
-    dftmp = dftmp[['date','time','REPORT_ID','DISTANCE_IN_METERS','vehicleCount']]
+    dftmp = dftmp[['date','time','REPORT_ID','DISTANCE_IN_METERS','vehicleCount','POINT_1_LAT','POINT_1_LNG']]
     dftmp['time_full'] = dftmp['time'].astype(str)
     dftmp['time_full'] = dftmp['time_full'].apply(lambda x: str(x) if (len(x)==2) else '0'+x) 
     dftmp['time_full'] = dftmp['time_full'].apply(lambda x: x+':00:00')
